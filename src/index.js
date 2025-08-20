@@ -1,21 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const bodyParser = require('body-parser')
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const express = require("express");
+const cors = require("cors");
+const UserRoute = require("../routes/user_route");
 
-app.use(bodyParser.json())
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send(`API running on port ${port}`)
-})
+app.use(express.json());
+app.use(cors());
 
-app.get('/users', async (req,res) => {
-  const users =  await prisma.users.findMany();
-  res.send(users)
-})
+app.use("/api", UserRoute);
 
-app.listen(port, () => {
-  console.log(`API running on port ${port}`)
-})
+const server = app.listen(3000, () =>
+  console.log(`
+🚀 Server ready at: http://localhost:3000
+⭐️ See sample requests: http://pris.ly/e/js/rest-express#3-using-the-rest-api`)
+);

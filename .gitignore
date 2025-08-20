@@ -39,3 +39,9 @@ temp/
 .cache/
 
 /src/generated/prisma
+
+/generated/prisma
+
+/generated/prisma
+
+/src/generated/prisma
