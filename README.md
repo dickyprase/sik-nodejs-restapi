@@ -20,33 +20,4 @@ Edit your .env file then run with :
 ```
 ## API Reference
 
-#### Get all users
-
-```bash
-  GET /api/users
-```
-
-#### Get user by id
-
-```bash
-  GET /api/user/:id
-```
-
-#### ADD user 
-
-```bash
-  POST /api/user/
-```
-
-#### UPDATE user 
-
-```bash
-  PUT /api/user/:id
-```
-
-#### DELETE user 
-
-```bash
-  DELETE /api/user/:id
-```
 
